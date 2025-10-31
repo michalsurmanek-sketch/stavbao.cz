@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stavbao.cz — Český stavební portál nové generace</title>
+  <meta name="description" content="Stavíme chytře. Online. Od A do O. Poptávky, nabídky, firmy, materiály a inspirace na jednom místě."/>
+  <!-- Roboto (česká diakritika) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root { --brand:#F39200; --ink:#3A3A3A; }
+    html,body{font-family: Roboto, system-ui, -apple-system, Segoe UI, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";}
+    .card{ @apply rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all; }
+    .card:hover{ @apply shadow-md -translate-y-0.5; }
+    .pill{ @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200; }
+  </style>
+</head>
+<body class="min-h-screen bg-[conic-gradient(at_0%_0%,#ffffff,rgba(0,0,0,0.02))] text-[15px] text-gray-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b border-gray-200 bg-white/80 backdrop-blur">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="h-9 w-9 rounded-xl bg-[var(--brand)] flex items-center justify-center shadow-sm">
+          <i data-lucide="hammer" class="text-white w-5 h-5"></i>
+        </div>
+        <div class="leading-tight">
+          <div class="text-lg font-extrabold tracking-tight text-[var(--ink)]">Stavbao<span class="text-[var(--brand)]">.cz</span></div>
+          <div class="text-[11px] text-gray-500 -mt-0.5">Stavíme chytře. Online. Od A do O.</div>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-gray-700">
+        <a href="#firmy" class="hover:text-[var(--brand)]">Firmy</a>
+        <a href="#poptavky" class="hover:text-[var(--brand)]">Poptávky</a>
+        <a href="#materialy" class="hover:text-[var(--brand)]">Materiály</a>
+        <a href="#magazin" class="hover:text-[var(--brand)]">Magazín</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <button class="hidden md:inline-flex rounded-xl border border-gray-200 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50">Přihlásit</button>
+        <button class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm hover:shadow-md transition-all active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-offset-2 bg-[var(--brand)] text-white focus:ring-[var(--brand)]">+ Vložit poptávku</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-gray-200">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(243,146,0,0.10),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(0,0,0,0.05),transparent_40%)]"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-[var(--ink)]">Český stavební portál nové generace</h1>
+          <p class="mt-3 text-gray-600 max-w-xl">Spojujeme zákazníky, firmy a materiály. Jedno místo pro kalkulace, poptávky, nabídky, inspiraci a profesionály v terénu.</p>
+
+          <!-- Filter bar -->
+          <div class="mt-5 w-full rounded-2xl border border-gray-200 bg-white/90 backdrop-blur p-3 md:p-4 shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+              <label class="md:col-span-2 flex items-center gap-2 border border-gray-200 rounded-xl px-3 py-2">
+                <i data-lucide="search" class="w-5 h-5 text-gray-500"></i>
+                <input id="q" placeholder="Co potřebujete? (např. plot, omítky, rekonstrukce)" class="w-full outline-none text-sm" />
+              </label>
+              <button class="flex items-center justify-between border border-gray-200 rounded-xl px-3 py-2 text-sm">
+                <span>Kategorie</span><i data-lucide="chevron-down" class="h-4 w-4 text-gray-500"></i>
+              </button>
+              <button class="flex items-center justify-between border border-gray-200 rounded-xl px-3 py-2 text-sm">
+                <span>Kraj</span><i data-lucide="chevron-down" class="h-4 w-4 text-gray-500"></i>
+              </button>
+              <button class="w-full inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm hover:shadow-md transition-all active:scale-[0.99] focus:outline-none focus:ring-2 focus:ring-offset-2 bg-[var(--brand)] text-white focus:ring-[var(--brand)]">
+                Vyhledat
+              </button>
+            </div>
+          </div>
+
+          <div class="mt-4 flex flex-wrap gap-2 text-xs text-gray-600">
+            <span class="pill">✓ Ověřené firmy</span>
+            <span class="pill">✓ Rychlé poptávky</span>
+            <span class="pill">✓ Transparentní rozpočty</span>
+            <span class="pill">✓ Napojení na CZBeton a MobilníSklad</span>
+          </div>
+        </div>
+        <div class="md:justify-self-end">
+          <div class="rounded-3xl border border-gray-200 bg-white p-4 shadow-lg">
+            <div class="grid grid-cols-2 gap-3">
+              <div class="card cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <div class="rounded-xl p-2 bg-gray-100 text-gray-700"><i data-lucide="brick-wall" class="h-5 w-5"></i></div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Zděné stavby</h3>
+                    <p class="text-xs text-gray-500">domy, příčky, omítky</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <div class="rounded-xl p-2 bg-gray-100 text-gray-700">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v18M8 3v18M12 3v18M16 3v18M20 3v18"/><path d="M2 8h20M2 16h20"/></svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Ploty & panely</h3>
+                    <p class="text-xs text-gray-500">beton, dřevo, pletivo</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <div class="rounded-xl p-2 bg-gray-100 text-gray-700"><i data-lucide="home" class="h-5 w-5"></i></div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Rekonstrukce</h3>
+                    <p class="text-xs text-gray-500">byty, koupelny, kuchyně</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <div class="rounded-xl p-2 bg-gray-100 text-gray-700"><i data-lucide="leaf" class="h-5 w-5"></i></div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Zahrady</h3>
+                    <p class="text-xs text-gray-500">terén, obrubníky, dlažby</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <div class="rounded-xl p-2 bg-gray-100 text-gray-700"><i data-lucide="wrench" class="h-5 w-5"></i></div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Řemesla</h3>
+                    <p class="text-xs text-gray-500">zedník, tesař, sádrokarton</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card cursor-pointer">
+                <div class="flex items-center gap-3">
+                  <div class="rounded-xl p-2 bg-gray-100 text-gray-700"><i data-lucide="warehouse" class="h-5 w-5"></i></div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Kontejnery</h3>
+                    <p class="text-xs text-gray-500">zázemí stavby, sklad</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section helper -->
+  <template id="section-tpl">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="mb-6">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-[var(--ink)]"></h2>
+        <p class="text-sm md:text-base text-gray-600 mt-1"></p>
+      </div>
+      <div class="slot"></div>
+    </section>
+  </template>
+
+  <!-- Firmy -->
+  <section id="firmy" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-[var(--ink)]">Ověřené stavební firmy</h2>
+      <p class="text-sm md:text-base text-gray-600 mt-1">Vyberte si z doporučených dodavatelů.</p>
+    </div>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <!-- Firm card -->
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-semibold text-gray-900">Zednictví Šurmánek</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span class="pill">zednické práce</span>
+              <span class="pill">omítky</span>
+              <span class="pill">rekonstrukce</span>
+            </div>
+            <div class="flex items-center gap-3 mt-3 text-sm text-gray-600">
+              <span class="pill">⭐ 4.8</span>
+              <span class="inline-flex items-center gap-1"><i data-lucide="map-pin" class="h-4 w-4"></i> Jihomoravský kraj</span>
+              <span class="inline-flex items-center gap-1"><i data-lucide="phone" class="h-4 w-4"></i> 777 123 456</span>
+            </div>
+          </div>
+          <button class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm hover:shadow-md transition-all bg-[var(--brand)] text-white">Detail firmy</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-semibold text-gray-900">CZBeton – Prefabrikáty</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span class="pill">betonové panely</span>
+              <span class="pill">ploty</span>
+              <span class="pill">základy</span>
+            </div>
+            <div class="flex items-center gap-3 mt-3 text-sm text-gray-600">
+              <span class="pill">⭐ 4.9</span>
+              <span class="inline-flex items-center gap-1"><i data-lucide="map-pin" class="h-4 w-4"></i> Zlínský kraj</span>
+              <span class="inline-flex items-center gap-1"><i data-lucide="phone" class="h-4 w-4"></i> 777 000 111</span>
+            </div>
+          </div>
+          <button class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm hover:shadow-md transition-all bg-[var(--brand)] text-white">Detail firmy</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-semibold text-gray-900">Mobilní Sklad s.r.o.</h3>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span class="pill">kontejnery</span>
+              <span class="pill">zázemí stavby</span>
+              <span class="pill">doprava</span>
+            </div>
+            <div class="flex items-center gap-3 mt-3 text-sm text-gray-600">
+              <span class="pill">⭐ 4.7</span>
+              <span class="inline-flex items-center gap-1"><i data-lucide="map-pin" class="h-4 w-4"></i> Jihomoravský kraj</span>
+              <span class="inline-flex items-center gap-1"><i data-lucide="phone" class="h-4 w-4"></i> 604 222 333</span>
+            </div>
+          </div>
+          <button class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm hover:shadow-md transition-all bg-[var(--brand)] text-white">Detail firmy</button>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 flex justify-center">
+      <button class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm hover:shadow-md transition-all bg-[var(--brand)] text-white">Zobrazit všechny firmy</button>
+    </div>
+  </section>
+
+  <!-- Poptávky -->
+  <section id="poptavky" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-[var(--ink)]">Aktuální poptávky</h2>
+      <p class="text-sm md:text-base text-gray-600 mt-1">Reagujte na zakázky ve vašem kraji.</p>
+    </div>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-semibold text-gray-900">Výstavba betonového plotu 40 m</h3>
+            <div class="mt-1 text-sm text-gray-600 flex flex-wrap items-center gap-3">
+              <span class="pill">Rozpočet: 120–150 tis. Kč</span>
+              <span class="inline-flex items-center gap-1"><i data-lucide="map-pin" class="h-4 w-4"></i> Uherské Hradiště</span>
+            </div>
+          </div>
+          <button class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm hover:shadow-md transition-all bg-[var(--brand)] text-white">Reagovat</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-semibold text-gray-900">Rekonstrukce koupelny 6 m²</h3>
+            <div class="mt-1 text-sm text-gray-600 flex flex-wrap items-center gap-3">
+              <span class="pill">Rozpočet: 90–120 tis. Kč</span>
+              <span class="inline-flex items-center gap-1"><i data-lucide="map-pin" class="h-4 w-4"></i> Brno-Bosonohy</span>
+            </div>
+          </div>
+          <button class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm hover:shadow-md transition-all bg-[var(--brand)] text-white">Reagovat</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-semibold text-gray-900">Zámková dlažba 80 m²</h3>
+            <div class="mt-1 text-sm text-gray-600 flex flex-wrap items-center gap-3">
+              <span class="pill">Rozpočet: 70–100 tis. Kč</span>
+              <span class="inline-flex items-center gap-1"><i data-lucide="map-pin" class="h-4 w-4"></i> Zlín</span>
+            </div>
+          </div>
+          <button class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm hover:shadow-md transition-all bg-[var(--brand)] text-white">Reagovat</button>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5 flex flex-wrap items-center justify-center gap-3">
+      <button class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm hover:shadow-md transition-all bg-[var(--brand)] text-white">+ Vložit vlastní poptávku</button>
+      <button class="text-sm font-semibold text-[var(--brand)] hover:underline">Prohlédnout všechny</button>
+    </div>
+  </section>
+
+  <!-- Materiály -->
+  <section id="materialy" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-[var(--ink)]">Materiály a produkty</h2>
+      <p class="text-sm md:text-base text-gray-600 mt-1">Ceny, specifikace a dostupnost od ověřených dodavatelů.</p>
+    </div>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-semibold text-gray-900">Betonový panel CZB 200×50×5 cm</h3>
+            <p class="text-sm text-gray-600 mt-1">žárová ocel, 2× kari, váha 75 kg</p>
+          </div>
+          <div class="text-right">
+            <div class="text-lg font-bold text-gray-900">od 450 Kč / ks</div>
+            <button class="mt-2 text-sm font-semibold text-[var(--brand)] hover:underline">Detail</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-semibold text-gray-900">Ytong P2-500, 375 mm</h3>
+            <p class="text-sm text-gray-600 mt-1">tepelná izolace, přesné zdění</p>
+          </div>
+          <div class="text-right">
+            <div class="text-lg font-bold text-gray-900">od 135 Kč / ks</div>
+            <button class="mt-2 text-sm font-semibold text-[var(--brand)] hover:underline">Detail</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="font-semibold text-gray-900">OSB 3, 12 mm</h3>
+            <p class="text-sm text-gray-600 mt-1">pero-drážka, vlhkuodolná</p>
+          </div>
+          <div class="text-right">
+            <div class="text-lg font-bold text-gray-900">od 289 Kč / m²</div>
+            <button class="mt-2 text-sm font-semibold text-[var(--brand)] hover:underline">Detail</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Magazín -->
+  <section id="magazin" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <div class="mb-6">
+      <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-[var(--ink)]">Magazín a inspirace</h2>
+      <p class="text-sm md:text-base text-gray-600 mt-1">Návody, kalkulačky a fotopostupy z realizací.</p>
+    </div>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <span class="pill">Kalkulace</span>
+            <h3 class="font-semibold text-gray-900 mt-2">Jak naplánovat rozpočet na plot – každý detail včetně dovozu a ruční práce</h3>
+            <p class="text-sm text-gray-600 mt-1">Krátké shrnutí článku – návody, inspirace, kalkulace a fotopostupy.</p>
+          </div>
+          <button class="text-sm font-semibold text-[var(--brand)] hover:underline">Číst</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <span class="pill">Návod</span>
+            <h3 class="font-semibold text-gray-900 mt-2">Základy pro zahradní domek: beton vs. dlaždice</h3>
+            <p class="text-sm text-gray-600 mt-1">Krátké shrnutí článku – návody, inspirace, kalkulace a fotopostupy.</p>
+          </div>
+          <button class="text-sm font-semibold text-[var(--brand)] hover:underline">Číst</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <span class="pill">Realizace</span>
+            <h3 class="font-semibold text-gray-900 mt-2">Pultová střecha krok za krokem</h3>
+            <p class="text-sm text-gray-600 mt-1">Krátké shrnutí článku – návody, inspirace, kalkulace a fotopostupy.</p>
+          </div>
+          <button class="text-sm font-semibold text-[var(--brand)] hover:underline">Číst</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-200 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid md:grid-cols-4 gap-8 text-sm">
+      <div>
+        <div class="flex items-center gap-2">
+          <div class="h-8 w-8 rounded-lg bg-[var(--brand)] flex items-center justify-center"><i data-lucide="hammer" class="h-4 w-4 text-white"></i></div>
+          <span class="font-extrabold text-[var(--ink)]">Stavbao<span class="text-[var(--brand)]">.cz</span></span>
+        </div>
+        <p class="text-gray-600 mt-2">Součást AO ekosystému: propojujeme projekty a služby napříč stavbou.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-[var(--ink)]">Sekce</h4>
+        <ul class="mt-2 space-y-2 text-gray-600">
+          <li><a href="#firmy" class="hover:text-[var(--brand)]">Firmy</a></li>
+          <li><a href="#poptavky" class="hover:text-[var(--brand)]">Poptávky</a></li>
+          <li><a href="#materialy" class="hover:text-[var(--brand)]">Materiály</a></li>
+          <li><a href="#magazin" class="hover:text-[var(--brand)]">Magazín</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-[var(--ink)]">AO projekty</h4>
+        <ul class="mt-2 space-y-2 text-gray-600">
+          <li><a class="hover:text-[var(--brand)]" href="#">CZBeton.cz</a></li>
+          <li><a class="hover:text-[var(--brand)]" href="#">MobilniSklad.cz</a></li>
+          <li><a class="hover:text-[var(--brand)]" href="#">Reklamas.cz</a></li>
+          <li><a class="hover:text-[var(--brand)]" href="#">StartAO.cz</a></li>
+          <li><a class="hover:text-[var(--brand)]" href="#">DomenAO.cz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-[var(--ink)]">Kontakt</h4>
+        <ul class="mt-2 space-y-2 text-gray-600">
+          <li class="flex items-center gap-2"><i data-lucide="phone" class="h-4 w-4"></i> +420 777 000 000</li>
+          <li class="flex items-center gap-2"><i data-lucide="mail" class="h-4 w-4"></i> info@stavbao.cz</li>
+          <li>Uherské Hradiště / Zlínský kraj</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-200 py-4 text-center text-xs text-gray-500">© <span id="y"></span> Stavbao.cz — Všechna práva vyhrazena.</div>
+  </footer>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) lucide.createIcons();
+      document.getElementById('y').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
