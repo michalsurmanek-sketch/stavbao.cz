@@ -1,0 +1,14 @@
+{
+  "name": "STAVBAO — stavební práce všeho druhu",
+  "short_name": "STAVBAO",
+  "description": "Stavební práce všeho druhu v Uherském Hradišti a okolí.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#06251e",
+  "theme_color": "#06251e",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

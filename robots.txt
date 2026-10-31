@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stavbao.cz/sitemap.xml

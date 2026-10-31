@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="128" viewBox="0 0 560 128">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 63 62 22l52 41M28 54v61h68V54" stroke="#173c30" stroke-width="10"/>
+    <path d="m46 35 16-13 17 13" stroke="#f15a1a" stroke-width="10"/>
+  </g>
+  <text x="140" y="94" font-family="Arial, sans-serif" font-size="78" font-weight="800" letter-spacing="-4" fill="#173c30">STAV<tspan fill="#f15a1a">BAO</tspan></text>
+</svg>
