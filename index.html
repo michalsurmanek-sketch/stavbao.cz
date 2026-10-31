@@ -32,9 +32,46 @@
     .hero-copy{max-width:640px;color:rgba(255,255,255,.96);font-size:clamp(17px,1.5vw,21px);line-height:1.52;margin:37px 0 0;text-shadow:0 2px 15px rgba(0,0,0,.35)}.hero-service-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:780px;margin:44px 0 28px;border-top:1px solid rgba(255,255,255,.25);border-bottom:1px solid rgba(255,255,255,.25)}.hero-service{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:15px 9px 14px;color:#fff;border-right:1px solid rgba(255,255,255,.3);font-size:14px;font-weight:600;line-height:1.25;text-shadow:0 2px 7px #081721}.hero-service:last-child{border-right:0}.hero-service svg{width:34px;height:34px;color:#ff8617;filter:drop-shadow(0 2px 4px rgba(0,0,0,.35))}.hero-service:hover{background:rgba(255,255,255,.08)}
     .hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:13px;max-width:640px}.hero-actions .button{min-height:66px;border-radius:12px;padding:14px 25px;font-size:clamp(16px,2vw,22px);box-shadow:0 8px 24px rgba(0,0,0,.18)}.hero-actions .button:first-child{background:linear-gradient(100deg,#ff9f13 0%,#f14a14 100%)}.hero-actions .button:first-child:hover{background:linear-gradient(100deg,#ffad2a,#d83f10)}.hero-actions .button>svg:first-child{width:27px;height:27px;flex:none}.hero-actions .button .button-arrow{width:26px;height:26px;margin-left:auto;flex:none}.hero-actions .button-outline{background:rgba(6,20,28,.32);border:1.5px solid rgba(255,255,255,.9);box-shadow:none}.hero-actions .button-outline:hover{background:rgba(255,255,255,.13);color:#fff}.hero-note{display:none}
     .project-photo{background-image:url("assets/stavbao-desktop-home.webp")}
-    @media(min-width:721px){.nav{gap:30px}.call-button{margin-left:0}.hero-content{padding-top:86px;padding-bottom:112px}.hero-service-row{max-width:700px}.hero-actions{flex-direction:row}.hero-actions .button{flex:1;font-size:16px;padding:14px 18px}.hero-actions .button:first-child{flex:1.15}}
+    @media(min-width:721px){.nav{gap:30px}.call-button{margin-left:0}.menu-toggle{display:none}.hero-content{padding-top:86px;padding-bottom:112px}.hero-service-row{max-width:700px}.hero-actions{flex-direction:row}.hero-actions .button{flex:1;font-size:16px;padding:14px 18px}.hero-actions .button:first-child{flex:1.15}}
     @media(max-width:720px){.topbar .wrap{width:calc(100% - 38px)}.nav{height:88px;gap:14px}.brand{font-size:29px;gap:9px}.brand-mark{width:47px;height:39px}.call-button{width:50px;height:50px;margin-left:auto}.menu-toggle{width:50px;height:50px}.mobile-menu{top:88px}.hero{height:auto;min-height:100svh;padding-top:88px;background-image:url("assets/stavbao-mobile-home.webp");background-position:center center}.hero:before{background:linear-gradient(180deg,rgba(5,22,34,.64) 0%,rgba(5,22,34,.55) 29%,rgba(5,22,34,.27) 55%,rgba(5,22,34,.65) 100%),linear-gradient(90deg,rgba(5,22,34,.16),transparent 75%)}.hero>.wrap{align-items:stretch}.hero-content{padding:83px 0 82px;max-width:none;width:100%}.hero .eyebrow{font-size:11px;letter-spacing:1.5px;gap:10px;white-space:nowrap}.hero .eyebrow:before{width:39px}.hero h1{font-size:clamp(39px,9.2vw,62px);line-height:1.05;letter-spacing:-2.6px;margin:27px 0 22px;max-width:100%}.hero h1 em{letter-spacing:-1.7px;margin-top:3px}.hero h1 em:after{height:5px;border-top-width:4px;bottom:-8px}.hero-copy{font-size:clamp(16px,4.35vw,21px);line-height:1.48;margin-top:32px;max-width:600px}.hero-service-row{margin:30px 0 28px;max-width:none}.hero-service{padding:12px 4px 11px;gap:8px;font-size:clamp(10px,3.15vw,14px)}.hero-service svg{width:34px;height:34px}.hero-actions{gap:12px;max-width:none}.hero-actions .button{width:100%;min-height:58px;padding:12px 17px;border-radius:11px;font-size:clamp(15px,4.2vw,21px);gap:12px}.hero-actions .button>svg:first-child{width:24px;height:24px}.hero-actions .button .button-arrow{width:25px;height:25px}.hero:after{height:15px}}
     @media(max-width:390px){.hero-content{padding-top:68px;padding-bottom:68px}.hero .eyebrow{font-size:9.5px;letter-spacing:1.1px}.hero .eyebrow:before{width:29px}.hero h1{font-size:clamp(36px,9vw,42px);letter-spacing:-2px}.hero-copy{font-size:15.5px}.hero-service{font-size:10px}.hero-service svg{width:30px;height:30px}.hero-service-row{margin-top:25px;margin-bottom:22px}}
+    .site-footer{position:relative;overflow:hidden;background:#06251e;color:#f4f7f5}
+    .footer-showcase{position:relative;isolation:isolate;min-height:560px;overflow:hidden;background:#08271f url("assets/stavbao-desktop-home.webp") right 48%/cover no-repeat}
+    .footer-showcase:before{position:absolute;z-index:-1;inset:0;content:"";background:linear-gradient(90deg,#092a22 0%,rgba(8,39,31,.99) 33%,rgba(8,39,31,.84) 56%,rgba(8,39,31,.15) 100%),linear-gradient(0deg,#08271f 0%,transparent 30%)}
+    .footer-top-accent{position:absolute;z-index:2;top:-1px;left:0;width:100%;height:112px;color:#f15a1a}
+    .footer-showcase-inner{position:relative;z-index:1;padding-top:135px;padding-bottom:54px}
+    .footer-brand{display:flex;width:max-content;align-items:center;gap:20px;color:#fff;font:800 clamp(44px,5vw,68px)/1 var(--display);letter-spacing:-3px}
+    .footer-brand svg{width:110px;height:92px;flex:none;color:#fff}
+    .footer-brand b{color:#f15a1a}
+    .footer-description{margin:16px 0 0;color:#f4f7f5;font-size:clamp(18px,2.2vw,29px);line-height:1.55}
+    .footer-values{display:grid;max-width:800px;grid-template-columns:repeat(4,1fr);margin-top:45px}
+    .footer-value{display:flex;min-height:130px;flex-direction:column;align-items:center;justify-content:center;gap:13px;border-right:1px solid rgba(255,255,255,.34);color:#fff;font-size:17px;line-height:1.3;text-align:center}
+    .footer-value:last-child{border-right:0}
+    .footer-value svg{width:52px;height:52px;color:#f15a1a}
+    .footer-detail{position:relative;overflow:hidden;background:#06251e}
+    .footer-detail>.wrap{position:relative;z-index:1}
+    .footer-blueprint{position:absolute;right:-42px;bottom:-135px;width:min(58vw,760px);height:auto;color:#b5c4bd;opacity:.11;pointer-events:none}
+    .footer-columns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:45px;padding:52px 0 48px;border-top:1px solid rgba(255,255,255,.42)}
+    .footer-column h2{display:flex;align-items:center;gap:18px;margin:0 0 28px;color:#fff;font:700 clamp(22px,2.4vw,32px)/1.2 var(--display);letter-spacing:-.7px}
+    .footer-column h2 span{width:52px;height:8px;flex:none;border-radius:2px;background:#f15a1a}
+    .footer-links{display:grid;gap:13px}
+    .footer-links a{display:flex;align-items:center;gap:16px;width:max-content;color:#e9efeb;font-size:20px;transition:color .2s,transform .2s}
+    .footer-links a:before{content:"";width:9px;height:9px;border-top:2px solid currentColor;border-right:2px solid currentColor;transform:rotate(45deg)}
+    .footer-links a:hover{color:#ff8c35;transform:translateX(3px)}
+    .footer-email{display:inline-flex;align-items:center;gap:19px;color:#e9efeb;font-size:20px}
+    .footer-email:hover{color:#ff8c35}
+    .footer-email svg{width:47px;height:42px;flex:none}
+    .footer-socials{display:flex;gap:16px}
+    .footer-socials span{display:grid;width:82px;height:76px;place-items:center;border:1.5px solid rgba(255,255,255,.8);border-radius:22px;color:#fff}
+    .footer-socials svg{width:40px;height:40px}
+    .footer-bottomline{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:34px 7px 42px;border-top:1px solid rgba(255,255,255,.42);color:#e0e8e3;font-size:18px}
+    .footer-bottomline>span{display:flex;align-items:center;gap:20px}
+    .footer-bottomline i{width:1px;height:21px;background:rgba(255,255,255,.55)}
+    .footer-bottomline>a{display:flex;align-items:center;gap:17px;font-weight:700}
+    .footer-bottomline b{display:grid;width:49px;height:49px;place-items:center;border:2px solid #f15a1a;border-radius:50%;color:#f15a1a;font-size:29px;line-height:1}
+    .footer-bottomline>a:hover{color:#ff8c35}
+    @media(max-width:900px){.footer-showcase{background-position:60% center}.footer-showcase:before{background:linear-gradient(90deg,#092a22 0%,rgba(8,39,31,.95) 45%,rgba(8,39,31,.55) 100%),linear-gradient(0deg,#08271f,transparent 45%)}.footer-columns{gap:24px}.footer-column h2{gap:12px}.footer-column h2 span{width:36px}.footer-socials{gap:9px}.footer-socials span{width:64px;height:62px;border-radius:17px}.footer-socials svg{width:32px;height:32px}}
+    @media(max-width:640px){.footer-showcase{min-height:0;background-position:62% center}.footer-top-accent{height:70px}.footer-showcase-inner{padding-top:104px;padding-bottom:40px}.footer-brand{gap:12px;font-size:42px;letter-spacing:-2px}.footer-brand svg{width:66px;height:58px}.footer-description{font-size:17px}.footer-values{grid-template-columns:repeat(2,1fr);margin-top:28px}.footer-value{min-height:112px;font-size:14px}.footer-value:nth-child(2){border-right:0}.footer-value:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.26)}.footer-value svg{width:40px;height:40px}.footer-columns{grid-template-columns:1fr;gap:0;padding:12px 0 24px}.footer-column{padding:24px 0;border-bottom:1px solid rgba(255,255,255,.23)}.footer-column:last-child{border-bottom:0}.footer-column h2{margin-bottom:17px;font-size:23px}.footer-column h2 span{width:35px;height:6px}.footer-links{grid-template-columns:1fr 1fr;gap:12px 18px}.footer-links a{gap:10px;font-size:15px}.footer-email{font-size:17px}.footer-email svg{width:37px;height:34px}.footer-socials{gap:12px}.footer-socials span{width:59px;height:56px}.footer-bottomline{align-items:flex-start;flex-direction:column;gap:18px;padding:22px 0 30px;font-size:14px}.footer-bottomline>span{flex-wrap:wrap;gap:10px}.footer-bottomline i{height:17px}.footer-bottomline b{width:40px;height:40px;font-size:24px}.footer-blueprint{right:-110px;bottom:-75px;width:460px;max-width:none}}
   </style>
 </head>
 <body>
@@ -98,7 +135,39 @@
       </form>
     </div></section>
   </main>
-  <footer class="footer"><div class="wrap"><div class="footer-top"><div><a class="brand" href="#domu"><svg class="brand-mark" viewBox="0 0 42 34" fill="none" aria-hidden="true"><path d="M3 17 21 4l18 13" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 15v15h22V15" stroke="#fff" stroke-width="3.5" stroke-linejoin="round"/><path d="m17 9 4-3 4 3" stroke="#e85a1b" stroke-width="3.5" stroke-linecap="round"/></svg><span>STAV<b>BAO</b></span></a><p class="footer-note">Stavební práce v Uherském Hradišti a okolí. Poctivě, srozumitelně a s důrazem na detail.</p></div><nav class="footer-nav" aria-label="Odkazy v patičce"><a href="#sluzby">Služby</a><a href="#postup">Jak pracujeme</a><a href="#realizace">Realizace</a><a href="#kontakt">Kontakt</a><a href="mailto:info@stavbao.cz">info@stavbao.cz</a></nav></div><div class="footer-bottom"><span>© <span id="year"></span> STAVBAO</span><a href="#domu">Zpět nahoru ↑</a></div></div></footer>
+  <footer class="site-footer">
+    <section class="footer-showcase" aria-label="O firmě STAVBAO">
+      <svg class="footer-top-accent" viewBox="0 0 1000 110" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 510 88 1000 0 1000 13 510 101 0 13Z" fill="currentColor"/></svg>
+      <div class="wrap footer-showcase-inner">
+        <a class="footer-brand" href="#domu" aria-label="STAVBAO — zpět na úvod">
+          <svg viewBox="0 0 72 60" fill="none" aria-hidden="true"><path d="M5 30 36 7l31 23M15 26v28h42V26" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="m27 13 9-7 9 7" stroke="#f15a1a" stroke-width="4.5" stroke-linecap="round"/></svg>
+          <span>STAV<b>BAO</b></span>
+        </a>
+        <p class="footer-description">Stavební práce v Uherském Hradišti a okolí.<br>Poctivě, srozumitelně a s důrazem na detail.</p>
+        <div class="footer-values">
+          <div class="footer-value"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M24 4 7 11v11c0 11 7 18 17 22 10-4 17-11 17-22V11L24 4Z"/><path d="m15 24 6 6 12-13"/></svg><span>Kvalitní<br>práce</span></div>
+          <div class="footer-value"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="24" cy="13" r="7"/><circle cx="9" cy="17" r="5"/><circle cx="39" cy="17" r="5"/><path d="M11 42v-5c0-8 5-13 13-13s13 5 13 13v5M2 40v-4c0-6 3-10 8-11m36 15v-4c0-6-3-10-8-11"/></svg><span>Zkušený<br>tým</span></div>
+          <div class="footer-value"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.3"><rect x="6" y="10" width="36" height="33" rx="3"/><path d="M15 5v10m18-10v10M6 20h36m-25 11 5 5 10-10"/></svg><span>Dodržení<br>termínů</span></div>
+          <div class="footer-value"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="m4 25 10-12 7 4 7-4 16 12-8 9-9-6-5 4-8-3-6 2-4-6Z"/><path d="m14 14 7 8m7-8-7 8m-6 9 6 5m7-8 7 5"/></svg><span>Férové<br>jednání</span></div>
+        </div>
+      </div>
+    </section>
+    <div class="footer-detail">
+      <svg class="footer-blueprint" viewBox="0 0 700 440" fill="none" aria-hidden="true"><g stroke="currentColor" stroke-width="1.5"><path d="m180 390 300-170 166 96-302 171-164-97Z"/><path d="m220 367 261-148m-94 205 260-150M265 340l166 96m-98-134 167 95m-98-134 167 96"/><path d="m234 317 113-65 74 43-113 65-74-43Zm188-4 88-50 42 24-88 51-42-25Zm-84 105 81-47 54 31-82 46-53-30Z"/><path d="m347 252 0 43m74-1v-42m42 67v-41m-125 141v-44m81-2v-43"/><path d="M164 407h490M200 427h455" stroke-dasharray="7 8"/></g></svg>
+      <div class="wrap">
+        <div class="footer-columns">
+          <section class="footer-column"><h2><span></span>Rychlé odkazy</h2><nav class="footer-links" aria-label="Rychlé odkazy"><a href="#sluzby">Služby</a><a href="#postup">Jak pracujeme</a><a href="#realizace">Realizace</a><a href="#kontakt">Kontakt</a></nav></section>
+          <section class="footer-column"><h2><span></span>Kontakt</h2><a class="footer-email" href="mailto:info@stavbao.cz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>info@stavbao.cz</a></section>
+          <section class="footer-column"><h2><span></span>Sledujte nás</h2><div class="footer-socials" aria-label="Sociální sítě">
+            <span aria-label="Facebook — odkaz bude doplněn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.4 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.5 1.6-1.5h1.7V3.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.3H7.2v3.2H10V21h3.4Z"/></svg></span>
+            <span aria-label="Instagram — odkaz bude doplněn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.7" r=".8" fill="currentColor" stroke="none"/></svg></span>
+            <span aria-label="YouTube — odkaz bude doplněn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.1a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5s-7 0-8.9.5A3 3 0 0 0 1 7.1 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.9A3 3 0 0 0 3.1 19c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23.5 12a31 31 0 0 0-.5-4.9ZM9.7 15.2V8.8l5.6 3.2-5.6 3.2Z"/></svg></span>
+          </div></section>
+        </div>
+        <div class="footer-bottomline"><span>© <span id="year"></span> STAVBAO <i></i> Všechna práva vyhrazena</span><a href="#domu">Zpět nahoru <b>↑</b></a></div>
+      </div>
+    </div>
+  </footer>
   <script>
     const menuButton=document.querySelector('.menu-toggle');
     const mobileMenu=document.querySelector('.mobile-menu');
